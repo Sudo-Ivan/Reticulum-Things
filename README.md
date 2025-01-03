@@ -1,11 +1,43 @@
 # Reticulum Things
 
-Everything reticulum. 
+My reticulum scripts, configs, and other things.
 
-## NomadNet Podman
+## Make Commands
 
 ```bash
+# Start all nodes (creates directories and copies configs/files)
+make start
 
+# Stop all nodes
+make stop
+
+# Remove everything (stops containers and removes volumes)
+make remove
+
+# Copy configs to a specific node
+make copy-config NODE=3
+
+# Copy pages to a specific node
+make copy-pages NODE=3
+
+# Copy files to a specific node
+make copy-files NODE=3
+
+# Copy to all nodes (omit NODE parameter)
+make copy-config
+make copy-pages
+make copy-files
+
+# Create backup of specific node
+make backup NODE=3
+
+# Create backup of all nodes
+make backup
+```
+
+## NomadNet Podman Commands
+
+```bash
 # Pull the image
 podman pull ghcr.io/markqvist/nomadnet:master
 
@@ -36,42 +68,4 @@ Kata-containers are hardware virtualized containers but lighter than full VMs.
 ```bash
 podman --runtime /usr/bin/kata-runtime run -d --name nomadnet --network host ghcr.io/markqvist/nomadnet:master
 ```
-
-## Ivans Reticulum Bots
-[See on Gitlab](https://gitlab.com/ivans-reticulum-bots)
-
-### Weather Bot
-
-Gets weather from OpenWeatherMap.
-
-### Trivia Bot
-
-### LXMF Bot Framework
-
-General purpose bot framework.
-
-### JS8Call-Bot
-
-JS8Call bridge bot.
-
-### Group Message Distribution Bot
-
-Distributes messages to a group of users.
-
-## Ivans Reticulum Bridges
-
-Discord, Matrix, Telegram, etc.
-
-Repo coming soon.
-
-### Discord Bridge
-
-A bridge between discord and reticulum. 
-
-Features:
-
-- Basic Message Support
-- Image Attachment Support
-
-
 

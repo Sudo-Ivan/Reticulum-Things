@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  nomadnet1:
+    container_name: nomadnet1
+    image: ghcr.io/markqvist/nomadnet:master
+    restart: unless-stopped
+    volumes:
+    - ./nomadnet-net/nomad1/nomadnet:/root/.nomadnetwork
+    - ./nomadnet-net/nomad1/reticulum:/root/.reticulum
+    command: --daemon --console
+  nomadnet2:
+    container_name: nomadnet2
+    image: ghcr.io/markqvist/nomadnet:master
+    restart: unless-stopped
+    volumes:
+    - ./nomadnet-net/nomad2/nomadnet:/root/.nomadnetwork
+    - ./nomadnet-net/nomad2/reticulum:/root/.reticulum
+    command: --daemon --console
+  nomadnet3:
+    container_name: nomadnet3
+    image: ghcr.io/markqvist/nomadnet:master
+    restart: unless-stopped
+    volumes:
+    - ./nomadnet-net/nomad3/nomadnet:/root/.nomadnetwork
+    - ./nomadnet-net/nomad3/reticulum:/root/.reticulum
+    command: --daemon --console
+  nomadnet4:
+    container_name: nomadnet4
+    image: ghcr.io/markqvist/nomadnet:master
+    restart: unless-stopped
+    volumes:
+    - ./nomadnet-net/nomad4/nomadnet:/root/.nomadnetwork
+    - ./nomadnet-net/nomad4/reticulum:/root/.reticulum
+    command: --daemon --console
